@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Collection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h2>Book Collection</h2>
+
+    <script>
+      $(document).ready(function () {
+        const books = {
+          books: [
+            {
+              title: "The Great Gatsby",
+              author: "F. Scott Fitzgerald",
+              publicationYear: 1925,
+              genres: ["Fiction", "Classics"],
+            },
+            {
+              title: "To Kill a Mockingbird",
+              author: "Harper Lee",
+              publicationYear: 1960,
+              genres: ["Fiction", "Coming-of-Age"],
+            },
+          ],
+        };
+
+        console.log("Title of first book: " + books.books[0].title);
+        console.log("Author of second book: " + books.books[1].author);
+        console.log("Genres of all books:");
+        $.each(books.books, function (index, book) {
+          console.log("- " + book.title + ": " + book.genres.join(", "));
+        });
+      });
+    </script>
+  </body>
+</html>
